@@ -52,13 +52,14 @@
     [leftSideNavController setRestorationIdentifier:@"MMExampleLeftNavigationControllerRestorationKey"];
     self.drawerController = [[MMDrawerController alloc]
                         initWithCenterViewController:navigationController
-                        leftDrawerViewController:leftSideNavController
+                        leftDrawerViewController:nil
                         rightDrawerViewController:rightSideNavController];
     [self.drawerController setShowsShadow:NO];
     [self.drawerController setRestorationIdentifier:@"MMDrawer"];
-    [self.drawerController setMaximumRightDrawerWidth:200.0];
+    [self.drawerController setMaximumRightDrawerWidth:320.0];
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    [self.drawerController setShouldStretchDrawer:NO];
     
     [self.drawerController
      setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
